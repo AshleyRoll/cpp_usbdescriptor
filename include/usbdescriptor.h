@@ -383,7 +383,7 @@ namespace usb::descriptor {
     // Rendering helper, pass in the lambda to generate the configuration
     //
     template<std::size_t ... Sizes>
-    constexpr static auto MakeConfigurationDescriptor(CallableGivesConfiguration<Sizes...> auto makeConfigLambda)
+    consteval static auto MakeConfigurationDescriptor(CallableGivesConfiguration<Sizes...> auto makeConfigLambda)
     {
         // build the configuration using the supplied lambda
         constexpr auto cfg = makeConfigLambda();
